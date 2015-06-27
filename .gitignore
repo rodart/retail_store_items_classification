@@ -1,0 +1,6 @@
+venv/
+*.pyc
+.idea/*
+.DS_Store
+data/models/*
+data/nltk/*
