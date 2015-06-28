@@ -22,4 +22,4 @@ class LemmaTokenizer(object):
         self.wnl = WordNetLemmatizer()
 
     def __call__(self, doc):
-        return [self.wnl.lemmatize(t) for t in word_tokenize(doc)]
+        return [self.wnl.lemmatize(t) for t in word_tokenize(doc.lower())]

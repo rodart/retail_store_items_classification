@@ -142,14 +142,14 @@ class TextClassifier(object):
 
         return result
 
-    def weighted_predict(self, prepared_phrase):
-        result = self._classifier.weighted_predict([prepared_phrase])
+    def weighted_predict(self, text):
+        result = self._classifier.weighted_predict([text])
         label = next(iter(result.keys()))
         if result[label] <= self._threshold:
             result.pop(label)
 
         return result
 
-    def decision_function(self, prepared_phrase):
-        result = self._classifier.decision_function([prepared_phrase])
+    def decision_function(self, text):
+        result = self._classifier.decision_function([text])
         return {label: conf for label, conf in result.items() if conf > self._threshold}
